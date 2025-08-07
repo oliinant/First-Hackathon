@@ -9,7 +9,7 @@ import { LoginHeader } from "./LoginHeader";
 function Login() {
     const [inputLoginValues, setInputLoginValues] = useState(["", ""]);
     const LoginInputHash = {
-        "email": {"id": "email", "type": "text", "labelText": "Email"},
+        "username": {"id": "username", "type": "text", "labelText": "Username"},
         "password": {"id": "password", "type":"password", "labelText": "Password"}
     }
 
