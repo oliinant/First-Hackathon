@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { LoginInputCreator } from "./LoginInputCreator";
+import { RememberMe } from "./RememberMe";
 
 
 function Login() {
     const [inputValues, setInputValues] = useState(["", ""]);
+    const [rememberMe, setRememberMe] = useState(false)
 
     const LoginInputHash = {
         "email": {"id": "email", "type": "text", "labelText": "Email"},
@@ -20,7 +22,10 @@ function Login() {
                 <form action="">
                     {InputElList}
 
-
+                    <RememberMe
+                        rememberMe={rememberMe}
+                        setRememberMe={setRememberMe}
+                    />
                 </form>
             </div>
         </div>
