@@ -1,9 +1,7 @@
-import { useState } from "react"
-
-export const RememberMe = ({ rememberMe, setRememberMe }) => {
+export const RememberMe = () => {
 
     return (
-        <div className="flex items-center justify-end flex-row-reverse border-box">
+        <div className="flex items-center justify-end flex-row-reverse border-box mb-[15px]">
             <input
                 id="remember-me-checkbox"
                 type="checkbox"

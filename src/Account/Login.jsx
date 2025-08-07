@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { LoginInputCreator } from "./LoginInputCreator";
 import { RememberMe } from "./RememberMe";
+import { LoginButton } from "./LoginButton";
 
 
 function Login() {
     const [inputValues, setInputValues] = useState(["", ""]);
-    const [rememberMe, setRememberMe] = useState(false)
-
     const LoginInputHash = {
         "email": {"id": "email", "type": "text", "labelText": "Email"},
         "password": {"id": "password", "type":"password", "labelText": "Password"}
@@ -22,10 +21,9 @@ function Login() {
                 <form action="">
                     {InputElList}
 
-                    <RememberMe
-                        rememberMe={rememberMe}
-                        setRememberMe={setRememberMe}
-                    />
+                    <RememberMe />
+
+                    <LoginButton />
                 </form>
             </div>
         </div>
