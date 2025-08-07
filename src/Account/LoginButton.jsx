@@ -1,10 +1,10 @@
-export const LoginButton = () => {
+export const LoginButton = ({ buttonName }) => {
     return (
         <button 
             type="submit"
-            className="w-[300px] h-[50px] bg-black rounded-[10px] cursor-pointer"
+            className="w-[300px] h-[50px] bg-black rounded-[10px] cursor-pointer mb-[15px]"
         >
-            <span className="text-white text-2xl font-bold">Login</span>
+            <span className="text-white text-xl font-bold">{buttonName}</span>
         </button>
     )
 }

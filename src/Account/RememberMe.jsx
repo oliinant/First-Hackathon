@@ -24,7 +24,7 @@ export const RememberMe = () => {
                 peer-checked:before:bg-black
                 checkmark-icon"
                 >
-                Remember Me
+                <span>Remember Me</span>
             </label>
         </div>
     )

@@ -2,29 +2,33 @@ import { useState } from "react";
 import { LoginInputCreator } from "./LoginInputCreator";
 import { RememberMe } from "./RememberMe";
 import { LoginButton } from "./LoginButton";
+import { Link } from "react-router-dom";
+import { LoginHeader } from "./LoginHeader";
 
 
 function Login() {
-    const [inputValues, setInputValues] = useState(["", ""]);
+    const [inputLoginValues, setInputLoginValues] = useState(["", ""]);
     const LoginInputHash = {
         "email": {"id": "email", "type": "text", "labelText": "Email"},
         "password": {"id": "password", "type":"password", "labelText": "Password"}
     }
 
-    const InputElList = LoginInputCreator(LoginInputHash, inputValues, setInputValues)
+    const InputElList = LoginInputCreator(LoginInputHash, inputLoginValues, setInputLoginValues)
 
     return (
         <div className="flex h-[100vh] justify-center items-center">
             <div className="flex flex-col p-[20px]">
-                <h1 className="text-center font-bold text-4xl mb-[15px]">Login</h1>
+                <LoginHeader confirmButtonName="Login"/>
 
                 <form action="">
                     {InputElList}
 
                     <RememberMe />
 
-                    <LoginButton />
+                    <LoginButton buttonName="Login"/>
                 </form>
+
+                <Link to="/login/sign-up" className="text-center">Create an account</Link>
             </div>
         </div>
     )
