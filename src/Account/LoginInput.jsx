@@ -22,7 +22,7 @@ export const LoginInput = ({ id, type, inputValues, setInputValues, labelText, i
                 <label 
                     htmlFor={id}
                     className={`absolute top-1/2 -translate-y-1/2 left-[10px] cursor-text transition-opacity duration-200 
-                        ${inputFocus || inputValues[i] ? "opacity-0" : "opacity-100"}`}
+                        ${inputValues[i] ? "opacity-0" : "opacity-100"}`}
             >
                 {labelText}
             </label>

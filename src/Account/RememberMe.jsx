@@ -12,7 +12,7 @@ export const RememberMe = () => {
                 className="relative 
                 cursor-pointer
                 select-none
-                pl-[1.2em]
+                pl-[1.3em]
                 before:absolute 
                 before:w-[1em]
                 before:h-[1em]
@@ -20,11 +20,9 @@ export const RememberMe = () => {
                 before:top-1/2
                 before:-translate-y-1/2
                 before:rounded-[0.2em]
-
-                peer-checked:before:bg-black
-                checkmark-icon"
+                peer-checked:before:bg-black"
                 >
-                <span>Remember Me</span>
+                <span>Remember me</span>
             </label>
         </div>
     )

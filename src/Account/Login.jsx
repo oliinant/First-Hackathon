@@ -23,9 +23,14 @@ function Login() {
                 <form action="">
                     {InputElList}
 
-                    <RememberMe />
+                    <div className="flex justify-around">
+                        <RememberMe />
+                        <Link to="/">Forgot password?</Link>
+                    </div>  
 
+                    
                     <LoginButton buttonName="Login"/>
+
                 </form>
 
                 <Link to="/login/sign-up" className="text-center">Create an account</Link>
