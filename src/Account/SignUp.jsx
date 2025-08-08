@@ -5,11 +5,17 @@ import { LoginButton } from "./LoginButton";
 import { Link } from "react-router-dom";
 import { LoginHeader } from "./LoginHeader";
 import ErrorHandling from "./ErrorHandling";
+import { ErrorMsgCreator } from "./ErrorMsgCreator";
+import { InputWithErrorMsgCreator } from "./InputWithErrorMsgCreator";
 
 function SignUp() {
     const [signUpInputValues, setSignUpInputValues] = useState({"username": "", "email": "", "password": "", "confirmPassword": ""})
+
     const [signUpErrors, setSignUpErrors] = useState({"username": false, "email": false, "password": false, "confirmPassword": false})
+    
+    ErrorHandling(signUpInputValues, setSignUpErrors)
     console.log(signUpErrors)
+
     const SignUpInputHash = {
         "username": {"id": "username", "type": "text", "labelText": "Username"},
         "email": {"id": "email", "type": "text", "labelText": "Email"},
@@ -17,17 +23,30 @@ function SignUp() {
         "confirmPassword": {"id": "confirmPassword", "type": "password", "labelText": "Confirm Password"},
     }
 
-    ErrorHandling(signUpInputValues, setSignUpErrors)
+    const ErrorMsgHash = {
+        "username": "3-25 chars, first 3 letters",
+        "email": "Invalid email",
+        "password": "8-70 chars, must include letter, digit, symbol",
+        "confirmPassword": "Confirm by matching password"
+    }
 
     const InputElList = LoginInputCreator(SignUpInputHash, signUpInputValues, setSignUpInputValues)
+    const ErrorMsgElList = ErrorMsgCreator(ErrorMsgHash, signUpErrors, signUpInputValues)
 
+    const InputErrorMsgPairHash = {
+        "usernamePair": {"input": InputElList[0], "errorMsg": ErrorMsgElList[0]},
+        "emailPair": {"input": InputElList[1], "errorMsg": ErrorMsgElList[1]},
+        "passwordPair": {"input": InputElList[2], "errorMsg": ErrorMsgElList[2]},
+        "confirmPasswordPair": {"input": InputElList[3], "errorMsg": ErrorMsgElList[3]}
+    }
+    
     return (
         <div className="flex h-[100vh] justify-center items-center">
             <div className="flex flex-col p-[20px]">
                 <LoginHeader confirmButtonName="Sign Up"/>
 
                 <form action="">
-                    {InputElList}
+                    <InputWithErrorMsgCreator InputErrorMsgPairHash={InputErrorMsgPairHash} />
 
                     <RememberMe position="pl-[15px]"/>
 

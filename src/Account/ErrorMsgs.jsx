@@ -1,0 +1,25 @@
+export const ErrorMsg = ({ errorText, signUpError, signUpInputValue}) => {
+    return (
+        <div className="absolute bottom-[-18px] pl-[15px]">
+            <span className={`
+            relative
+            text-xs 
+            text-black 
+            w-[5px]
+            pl-[1.3em]
+            ${signUpError && signUpInputValue !== "" ? "opacity-100" : "opacity-0"}
+            before:absolute
+            before:left-0
+            before:top-1/2
+            before:-translate-y-1/2
+            before:content-['']  
+            before:w-[0.9em]
+            before:h-[0.9em]
+            before:rounded-[0.2em]
+            before:bg-black
+            before:rotate-45`}>
+                {errorText}
+            </span>
+        </div>
+    )
+}
