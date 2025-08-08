@@ -1,6 +1,6 @@
 export const ErrorMsg = ({ errorText, signUpError, signUpInputValue}) => {
     return (
-        <div className="absolute bottom-[-18px] pl-[8px]">
+        <div className="absolute bottom-[-18.5px] pl-[8px]">
             <span className={`
             relative
             text-xs 
