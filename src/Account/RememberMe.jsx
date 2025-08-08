@@ -1,7 +1,7 @@
-export const RememberMe = () => {
+export const RememberMe = ({ position }) => {
 
     return (
-        <div className="flex items-center justify-end flex-row-reverse border-box mb-[15px]">
+        <div className={`flex items-center justify-end ${position} flex-row-reverse border-box mb-[15px]`}>
             <input
                 id="remember-me-checkbox"
                 type="checkbox"

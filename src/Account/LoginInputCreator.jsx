@@ -4,6 +4,7 @@ export const LoginInputCreator = (inputComponentHash, inputValues, setInputValue
     return Object.entries(inputComponentHash).map(([inputName, inputAttributes], i) => {
         return (<LoginInput
             key={inputName}
+            name={inputName}
             id={inputAttributes.id}
             type={inputAttributes.type}
             inputValues={inputValues}

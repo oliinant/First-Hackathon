@@ -7,7 +7,7 @@ import { LoginHeader } from "./LoginHeader";
 
 
 function Login() {
-    const [inputLoginValues, setInputLoginValues] = useState(["", ""]);
+    const [inputLoginValues, setInputLoginValues] = useState({"username": "", "password": ""});
     const LoginInputHash = {
         "username": {"id": "username", "type": "text", "labelText": "Username"},
         "password": {"id": "password", "type":"password", "labelText": "Password"}
@@ -24,7 +24,7 @@ function Login() {
                     {InputElList}
 
                     <div className="flex justify-around">
-                        <RememberMe />
+                        <RememberMe position=""/>
                         <Link to="/">Forgot password?</Link>
                     </div>  
 

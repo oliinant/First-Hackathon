@@ -4,9 +4,12 @@ import { RememberMe } from "./RememberMe";
 import { LoginButton } from "./LoginButton";
 import { Link } from "react-router-dom";
 import { LoginHeader } from "./LoginHeader";
+import ErrorHandling from "./ErrorHandling";
 
 function SignUp() {
-    const [signUpInputLoginValues, setSignUpInputLoginValues] = useState(["", "", "", ""])
+    const [signUpInputValues, setSignUpInputValues] = useState({"username": "", "email": "", "password": "", "confirmPassword": ""})
+    const [signUpErrors, setSignUpErrors] = useState({"username": false, "email": false, "password": false, "confirmPassword": false})
+    console.log(signUpErrors)
     const SignUpInputHash = {
         "username": {"id": "username", "type": "text", "labelText": "Username"},
         "email": {"id": "email", "type": "text", "labelText": "Email"},
@@ -14,7 +17,9 @@ function SignUp() {
         "confirmPassword": {"id": "confirmPassword", "type": "password", "labelText": "Confirm Password"},
     }
 
-    const InputElList = LoginInputCreator(SignUpInputHash, signUpInputLoginValues, setSignUpInputLoginValues)
+    ErrorHandling(signUpInputValues, setSignUpErrors)
+
+    const InputElList = LoginInputCreator(SignUpInputHash, signUpInputValues, setSignUpInputValues)
 
     return (
         <div className="flex h-[100vh] justify-center items-center">
@@ -24,7 +29,7 @@ function SignUp() {
                 <form action="">
                     {InputElList}
 
-                    <RememberMe />
+                    <RememberMe position="pl-[15px]"/>
 
                     <LoginButton buttonName="Create account"/>
                 </form>
