@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export const LoginInput = ({ id, name, type, inputValues, setInputValues, labelText, i }) => {
+export const LoginInput = ({ id, name, type, inputValues, setInputValues, labelText }) => {
     const [inputFocus, setInputFocus] = useState(false);
 
     return (

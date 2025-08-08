@@ -7,6 +7,7 @@ import { LoginHeader } from "./LoginHeader";
 import ErrorHandling from "./ErrorHandling";
 import { ErrorMsgCreator } from "./ErrorMsgCreator";
 import { InputWithErrorMsgCreator } from "./InputWithErrorMsgCreator";
+import signUpButtonErrorHandler from "./SignUpButtonErrorHandler";
 
 function SignUp() {
     const [signUpInputValues, setSignUpInputValues] = useState({"username": "", "email": "", "password": "", "confirmPassword": ""})
@@ -40,6 +41,8 @@ function SignUp() {
         "confirmPasswordPair": {"input": InputElList[3], "errorMsg": ErrorMsgElList[3]}
     }
     
+    const signUpHasErrors = signUpButtonErrorHandler(signUpErrors)
+
     return (
         <div className="flex h-[100vh] justify-center items-center">
             <div className="flex flex-col p-[20px]">
@@ -50,7 +53,7 @@ function SignUp() {
 
                     <RememberMe position="pl-[15px]"/>
 
-                    <LoginButton buttonName="Create account"/>
+                    <LoginButton buttonName="Create account" signUpHasErrors={signUpHasErrors}/>
                 </form>
 
                 <Link to="/login" className="text-center">Already have an account?</Link>
