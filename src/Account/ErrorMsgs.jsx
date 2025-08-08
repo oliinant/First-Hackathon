@@ -4,7 +4,7 @@ export const ErrorMsg = ({ errorText, signUpError, signUpInputValue}) => {
             <span className={`
             relative
             text-xs 
-            text-[#4E0707] 
+            text-[#B22222] 
             w-[5px]
             pl-[1.3em]
             ${signUpError && signUpInputValue !== "" ? "opacity-100" : "opacity-0"}
@@ -16,7 +16,7 @@ export const ErrorMsg = ({ errorText, signUpError, signUpInputValue}) => {
             before:w-[0.9em]
             before:h-[0.9em]
             before:rounded-[0.2em]
-            before:bg-[#4E0707]
+            before:bg-[#B22222]
             before:rotate-45`}>
                 {errorText}
             </span>

@@ -15,7 +15,6 @@ function SignUp() {
     const [signUpErrors, setSignUpErrors] = useState({"username": false, "email": false, "password": false, "confirmPassword": false})
     
     ErrorHandling(signUpInputValues, setSignUpErrors)
-    console.log(signUpErrors)
 
     const SignUpInputHash = {
         "username": {"id": "username", "type": "text", "labelText": "Username"},
@@ -25,10 +24,10 @@ function SignUp() {
     }
 
     const ErrorMsgHash = {
-        "username": "3-25 chars, first 3 letters",
-        "email": "Invalid email",
-        "password": "8-70 chars, must include letter, digit, symbol",
-        "confirmPassword": "Confirm by matching password"
+        "username": "You must use 3-25 letters, no symbols",
+        "email": "You must enter a valid email",
+        "password": "You must include 8+ chars, letter, digit, symbol",
+        "confirmPassword": "You must match the password"
     }
 
     const InputElList = LoginInputCreator(SignUpInputHash, signUpInputValues, setSignUpInputValues, signUpErrors, signUpInputValues)
