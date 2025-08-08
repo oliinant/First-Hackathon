@@ -31,7 +31,7 @@ function SignUp() {
         "confirmPassword": "Confirm by matching password"
     }
 
-    const InputElList = LoginInputCreator(SignUpInputHash, signUpInputValues, setSignUpInputValues)
+    const InputElList = LoginInputCreator(SignUpInputHash, signUpInputValues, setSignUpInputValues, signUpErrors, signUpInputValues)
     const ErrorMsgElList = ErrorMsgCreator(ErrorMsgHash, signUpErrors, signUpInputValues)
 
     const InputErrorMsgPairHash = {

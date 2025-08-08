@@ -2,11 +2,20 @@ import { useState } from "react"
 
 
 
-export const LoginInput = ({ id, name, type, inputValues, setInputValues, labelText }) => {
+export const LoginInput = ({ id, name, type, inputValues, setInputValues, labelText, signUpError, signUpInputValue }) => {
     const [inputFocus, setInputFocus] = useState(false);
+    const showError = signUpError && signUpInputValue !== "";
+    console.log(showError)
+
 
     return (
-        <div className={`flex relative w-[300px] h-[50px] pl-[10px] mb-[17px] border-[3px] ${inputFocus ? "border-black/100": "border-black/0"} rounded-[10px] `}>
+        <div 
+        className={`flex relative w-[300px] h-[50px] pl-[10px] mb-[17px] border-[3px] rounded-[10px]`}
+        style={{ 
+            borderColor: inputFocus 
+            ? (showError ? "rgba(78, 7, 7, 1)" : "rgba(0, 0, 0, 1)")
+            : "rgba(0, 0, 0, 0)"
+        }}>
             <input
                 id={id}
                 name={name}
@@ -19,7 +28,7 @@ export const LoginInput = ({ id, name, type, inputValues, setInputValues, labelT
                     [name]: e.target.value
                 });
                 }}
-                className={`align-center w-[270px] font-bold focus:outline-none`} 
+                className={`align-center w-[270px] font-bold ${showError ? "text-[#4E0707]" : "text-black"} focus:outline-none`} 
 
             />
             <label 
