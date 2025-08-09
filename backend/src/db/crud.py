@@ -25,8 +25,25 @@ def check_user_login(username, password):
     finally:
         session_gen.close()
 
-add_user("UwU", "ichbinoliin", "123")
-        
+def is_usename_unique(username):
+    session_gen = get_session()
+    session = next(session_gen)
     
+    try:
+        user = session.query(User).filter_by(username=username).first
         
+        return user is None    
+    finally:
+        session_gen.close
 
+
+def is_email_unique(email):
+    session_gen = get_session()
+    session = next(session_gen)
+    
+    try:
+        user = session.query(User).filter_by(email=email).first
+        
+        return user is None    
+    finally:
+        session_gen.close
