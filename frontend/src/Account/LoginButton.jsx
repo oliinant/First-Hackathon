@@ -1,7 +1,12 @@
+import { sendAuthData } from "./sendAuthData";
+
 export const LoginButton = ({ buttonName, signUpHasErrors=null }) => {
     const handleClick = (e) => {
         if (signUpHasErrors) {
             e.preventDefault();
+        }
+        else {
+            sendAuthData()
         }
     }
 
