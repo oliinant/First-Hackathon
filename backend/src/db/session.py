@@ -12,8 +12,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 db_session = scoped_session(SessionLocal)
 
-def get_db():
-    session = SessionLocal
+def get_session():
+    session = SessionLocal()
     try:
         yield session
     finally:
