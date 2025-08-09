@@ -29,7 +29,11 @@ function Login() {
                     </div>  
 
                     
-                    <LoginButton buttonName="Login"/>
+                    <LoginButton 
+                        buttonName="Login"
+                        inputValues={inputLoginValues}
+                        location="/login"
+                    />
 
                 </form>
 

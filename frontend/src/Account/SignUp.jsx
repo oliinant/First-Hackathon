@@ -52,7 +52,12 @@ function SignUp() {
 
                     <RememberMe position="pl-[15px]"/>
 
-                    <LoginButton buttonName="Create account" signUpHasErrors={signUpHasErrors}/>
+                    <LoginButton 
+                        buttonName="Create account" 
+                        signUpHasErrors={signUpHasErrors}
+                        inputValues={signUpInputValues}
+                        location="/login/sign-up"
+                    />
                 </form>
 
                 <Link to="/login" className="text-center">Already have an account?</Link>
